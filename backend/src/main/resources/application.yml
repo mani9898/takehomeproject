@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ecfr-backend
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://localhost:9000/.well-known/jwks.json"
+
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/account-service-database"
+    username: "postgres"
+    password: "Samrit22!"
+    driver-class-name: "org.postgresql.Driver"
+  jpa:
+    database-platform: "org.hibernate.dialect.PostgreSQLDialect"
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8080
+
+cors:
+  allowed-origins: "http://localhost:5173" # Default Vite port

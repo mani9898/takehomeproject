@@ -1,0 +1,5 @@
+.vscode/
+scratch.json
+# Depending on submodule status, OS generated files
+.DS_Store
+Thumbs.db

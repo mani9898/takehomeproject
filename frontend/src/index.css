@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background: radial-gradient(circle at top left, rgba(77, 142, 255, 0.15), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(192, 193, 255, 0.08), transparent 24%),
+                linear-gradient(180deg, #091120 0%, #0b1326 48%, #08101f 100%);
+    background-attachment: fixed;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #dae2fd;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Mimicking devvGOV's deep space obsidian paneling */
+  .obsidian-panel {
+    @apply bg-gradient-to-b from-[#171f33]/95 to-[#131b2e]/90 rounded-2xl border border-[#2d3449]/50 shadow-[0_30px_80px_rgba(8,16,31,0.45)] backdrop-blur-md;
+  }
+  
+  .obsidian-input {
+    @apply bg-[#131b2e]/80 border-0 rounded-xl text-[#dae2fd] focus:ring-2 focus:ring-[#4d8eff] outline-none;
+  }
+}

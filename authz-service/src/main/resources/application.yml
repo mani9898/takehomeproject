@@ -1,0 +1,40 @@
+server:
+  port: 9000
+
+app:
+  issuer: "http://localhost:9000"
+  audience: "api://default"
+
+logging:
+  level:
+    org.springframework.security: TRACE
+
+security:
+  jwt:
+    key-store:
+      location: "classpath:keystore.jks"
+      password: "Tarmeen"
+      alias: "certificate"
+
+spring:
+  application:
+    name: authz-service
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: "postgres"
+    password: "Samrit22!"
+    driver-class-name: "org.postgresql.Driver"
+
+  jpa:
+    database-platform: "org.hibernate.dialect.PostgreSQLDialect"
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
