@@ -3,8 +3,9 @@ module.exports = {
     {
       name: 'ecfr-auth-node',
       cwd: './authz-service',
-      script: 'mvnw',
+      script: './mvnw',
       args: 'spring-boot:run',
+      interpreter: 'bash',
       watch: false,
       env: {
         SERVER_PORT: '9000'
@@ -13,8 +14,9 @@ module.exports = {
     {
       name: 'ecfr-backend-node',
       cwd: './backend',
-      script: 'mvnw',
+      script: './mvnw',
       args: 'spring-boot:run',
+      interpreter: 'bash',
       watch: false,
       env: {
         SERVER_PORT: '8080'
