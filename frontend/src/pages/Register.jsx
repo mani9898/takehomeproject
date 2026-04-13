@@ -6,12 +6,14 @@ const Register = () => {
     const navigate = useNavigate();
     const [form, setForm] = useState({ username: '', email: '', password: '' });
     const [error, setError] = useState('');
+    const [successMsg, setSuccessMsg] = useState('');
 
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:9000/api/users/register', form);
-            navigate('/login');
+            await axios.post('http://164.92.77.90:9000/api/users/register', form);
+            setSuccessMsg("Registration robust. Proceed to initialize session.");
+            setTimeout(() => navigate('/login'), 2000);
         } catch(e) {
             setError(e.response?.data?.message || 'Registration failed');
         }

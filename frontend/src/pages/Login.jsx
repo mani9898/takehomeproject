@@ -10,7 +10,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:9000/api/users/login', credentials);
+            const res = await axios.post('http://164.92.77.90:9000/api/users/login', credentials);
             const { token } = res.data;
             localStorage.setItem("authToken", token);
             navigate('/');
